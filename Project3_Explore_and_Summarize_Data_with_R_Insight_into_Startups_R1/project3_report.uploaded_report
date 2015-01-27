@@ -1,0 +1,14 @@
+Hi Nikolay,
+Thank you very much for your careful evaluation and great suggestions. I edited the code to address your concerns, and resubmitted files to the system. For details, please review the following responses: 
+
+1) For final figure 1 there is no need for frequency polygon because it distorts the shape of the distributions, and it also extends by a lot the y-axis.
+R: Thanks for this suggestion. I removed the frequency polygon and add the Òaes(x = funding_total_usd, y = ..density..)Ó to my code.
+
+3) For your final figure 4, I think the y-axis label is counts per status and market type and not total funding. Please change that.
+R: Good point. I changed the title and y-axis label, used the size of the point to display the total amount of funding and applied a horizontal jitter.
+
+4) In your conclusion, please provide at least one idea or question for future work.
+R: I added the following concerned question in the conclusion:
+ÒThis analysis focused on startups in US states, it's will be very interesting to analyze hotstartups in world in future exploration using dataset including global startups.Ó
+
+
