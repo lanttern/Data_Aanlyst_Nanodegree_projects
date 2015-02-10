@@ -1,4 +1,10 @@
-# Data_Aanlyst_Nanodegree_projects and courses:
+# Data Aanlyst Nanodegree (Udacity)
+
+
+![alt tag](https://lh4.ggpht.com/p3YcVrknIelOAFSPdcBfeutJvlZf5PAdwxA2QsgOz6RZ61qXmKgbsMzEuu6p7o_krEG0i853Rmzuq7VMFA=s300#w=1090&h=670) 
+
+
+
 
 ##Projects:
 
