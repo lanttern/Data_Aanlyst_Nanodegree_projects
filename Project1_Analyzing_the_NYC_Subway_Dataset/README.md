@@ -8,6 +8,10 @@ whether	rainy	days	impacts	ridership.
 ##Section	1.	Statistical	Test
 1. Which	statistical	test	did	you	use	to	analyse	the	NYC	subway	data?
 To	analyze the	MTA	subway	data, I	used Mann-Whitney	U-Test.
+![alt tag](http://url/to/img.png)
+I think you can link directly to the raw version of an image if it's stored in your repository. i.e.
+
+![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
 
 2. Why	is	this	statistical	test	appropriate	or	applicable	to	the	dataset?
 The	 data	 I	 analyzed	 include	 two	 populations:	 ridership	 on	 rainy	 days	 and	
