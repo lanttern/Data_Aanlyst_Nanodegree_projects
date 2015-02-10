@@ -8,7 +8,8 @@ whether	rainy	days	impacts	ridership.
 ##Section	1.	Statistical	Test
 1. Which	statistical	test	did	you	use	to	analyse	the	NYC	subway	data?
 To	analyze the	MTA	subway	data, I	used Mann-Whitney	U-Test.
-![alt tag](http://url/to/img.png)
+
+![alt tag](https://lh4.ggpht.com/p3YcVrknIelOAFSPdcBfeutJvlZf5PAdwxA2QsgOz6RZ61qXmKgbsMzEuu6p7o_krEG0i853Rmzuq7VMFA=s300#w=1090&h=670)
 I think you can link directly to the raw version of an image if it's stored in your repository. i.e.
 
 ![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
