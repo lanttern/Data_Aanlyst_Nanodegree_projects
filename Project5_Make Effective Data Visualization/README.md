@@ -27,7 +27,8 @@ Using the cleaned data, I decided to creat a new chart with D3.js and dimple.js.
 ## Post-feedback Design
 
 ## Referencs
-	•	[CrunchBase](https://www.crunchbase.com/)
-	•	Exploratory Data Analysis Using R (Udacity)
-	•	dimple.js Documentation
-	•	Data Visualization and D3.js (Udacity)
+[CrunchBase](https://www.crunchbase.com/)
+[Exploratory Data Analysis Using R (Udacity)](https://www.udacity.com/course/ud651)
+[Data Visualization and D3.js (Udacity)](https://www.udacity.com/course/ud507)
+[Dimple.js Documentation](dimplejs.org/)
+[Stackoverflow](stackoverflow.com/)
