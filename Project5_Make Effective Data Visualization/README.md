@@ -16,6 +16,7 @@ This new chart displays the trends of relative market share for startups, which 
 Finally, I loaded the exploration results to “clean_data_R” fold and exported the truncated data to “data” fold.
 ### Data Visualization 
 Using the cleaned data, I decided to creat a new chart with D3.js and dimple.js. I tried several different charts: line chart, scatter chart, bubble chart, area and bar charts. I noticed that the line chart combined with the scatter chart clearly represented the changes of each market over time. But, the overall trends and comparisons among markets in a given year is not clear. Thus, I considered using a combination of bar chart and area chart. The bar chart is good to reflect the market share for each market in a certain year. The area chart displays the trend of market share over time. To improve the chart, I did the following adjustments: 1) used different colors to distinguish markets from each other; 2) format x and y-axes and add title for axes; 3) add title for the chart on top center; 4) add legend to indicate each market; 5) add a mouse event to highlight individual market. The initial chart was shown as below:
+
 ![alt tag](images/d3.png) 
 ## Feedback
 #### Interview #1
@@ -28,7 +29,11 @@ Using the cleaned data, I decided to creat a new chart with D3.js and dimple.js.
 
 ## Referencs
 [CrunchBase](https://www.crunchbase.com/)
+
 [Exploratory Data Analysis Using R (Udacity)](https://www.udacity.com/course/ud651)
+
 [Data Visualization and D3.js (Udacity)](https://www.udacity.com/course/ud507)
+
 [Dimple.js Documentation](dimplejs.org/)
+
 [Stackoverflow](stackoverflow.com/)
