@@ -1,6 +1,6 @@
 # Data Wrangle OpenStreetMaps: Improve OpenStreetMaps in Las Vegas
 
-By Zhihui Xie
+by Zhihui Xie
 xiewisdom@gmail.com
 
 ## Project Summary
