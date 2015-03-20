@@ -46,6 +46,7 @@ In responding to comments from the interviews, I improved the chart with the fol
 2) Increased space between title and the top of page (style1.css);
 3) Muted the grid lines (myChart2.js);
 4) Removed “mouseover” and “mouse out” events. Applied “click” (to show area) and “dblclick” (to hide area) events to highlight two of more area (myChart3.js and index3.html).
+5) Edited title.
 
 I did not include other markets with increasing trends because of the following two reasons: 1) this visualization focused on hot startup markets; 2) there are many new emerged small markets with increasing trends, adding these markets which will make the visualization too complex.
 The final chart of the data visualization is shown below:
