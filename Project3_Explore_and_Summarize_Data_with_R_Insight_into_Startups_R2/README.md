@@ -610,3 +610,5 @@ When I analyze the data set, I notice that there are missing values. For instanc
 [Exploratory Data Analysis Using R](https://www.udacity.com/course/ud651)
 
 [ggplot2](http://docs.ggplot2.org/0.9.3.1/index.html)
+
+[R Tutorial](http://www.cyclismo.org/tutorial/R/)
