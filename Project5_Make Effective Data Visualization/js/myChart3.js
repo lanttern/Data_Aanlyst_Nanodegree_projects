@@ -12,7 +12,7 @@ function draw(data) {
           d3.select("#mychart")
             .append("h2")
                .attr("id", "title")
-               .text("Global Trends for Startup Markets");
+               .text("Global Trends for Startup Markets: 1990 to 2014");
 
           var svg = d3.select("#mychart")
             .append("svg")

@@ -21,7 +21,7 @@ suppressMessages(library(dplyr))
 ```
 
 # 1. Overview
-#### This data set includes information about startups in world wide collected by CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/). The exploration here will focus on markets of new founded startups and observe the global trends of startup markets.
+#### This data set includes information about startups worldwide collected by CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/). The exploration here will focus on the global trends of startup market share over time from 1990 to 2014.
 
 # 2. Clean data and Exploration
 
