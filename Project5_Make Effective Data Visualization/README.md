@@ -20,14 +20,39 @@ Using the cleaned data, I decided to creat a new chart with D3.js and dimple.js.
 ![alt tag](images/d3.png) 
 ## Feedback
 #### Interview #1
+###### I quickly noticed the biotechnology market was shrunk dramatically. Highlight one market is really helpful to draw attention. 
+
+###### I feel the font size of x-, y-labels and legends is too small and hard to see. It will be better if the font size is bigger. 
+
+###### I think the main takeaway is that the market share of these startups is decreasing.
 
 #### Interview #2
+###### I noticed that this was an interactive graphic. I really like the way to highlight area for individual market when mouse was on that area.
+
+###### For the layout, I think the title is too close to the top of the page. Also, the grid lines seems to interfere the visualization.
+
+###### When I looked into the chart, the main idea I got was the startup markets were shrunk from 2005 to 2014. 
+
+###### Overall, the chart is very clear and easy to understand. 
 
 #### Interview #3
+###### The emphasis on biotechnology market showed a clear trend of this startup market over time. I think it will be better if you can select and highlight two or more markets for comparisons.
 
-## Post-feedback Design
+###### I noticed that the quantity of 5 markets were decreased and only the real estate market was increased. It will be interesting to find out other markets that also have increasing trends.
 
-## Referencs
+## Final Design
+In responding to comments from the interviews, I improved the chart with the following modifications:
+1) Set and increases font size of x, y and legend labels (myChart1.js);
+2) Increased space between title and the top of page (style1.css);
+3) Muted the grid lines (myChart2.js);
+4) Removed “mouseover” and “mouse out” events. Applied “click” (to show area) and “dblclick” (to hide area) events to highlight two of more area (myChart3.js and index3.html).
+
+I did not include other markets with increasing trends because of the following two reasons: 1) this visualization focused on hot startup markets; 2) there are many new emerged small markets with increasing trends, adding these markets which will make the visualization too complex.
+The final chart of the data visualization is shown below:
+![alt tag](images/d3_final.png) 
+The final code includes "index3.html", "css/style1.css", "js/myChart.js". 
+
+## Resources
 [CrunchBase](https://www.crunchbase.com/)
 
 [Exploratory Data Analysis Using R (Udacity)](https://www.udacity.com/course/ud651)
