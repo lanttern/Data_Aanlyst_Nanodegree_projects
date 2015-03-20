@@ -79,6 +79,6 @@ I	am	interested	in	investigating	how	temperature	affects	ridership.	I	compared	t
 
 [Intro	to	Statistics (Udacity)](https://www.udacity.com/course/st101)
 
-[Shapiro–Wilk	test	- Wikipedia,	the	free	encyclopedia](en.wikipedia.org/wiki/Shapiro–Wilk_test)
+[Shapiro–Wilk	test	- Wikipedia,	the	free	encyclopedia](http://en.wikipedia.org/wiki/Shapiro–Wilk_test)
 
 [Mann-Whitney	U-test	/	Mann-Whitney-Wilcoxon	- Explorable](https://explorable.com/mann-whitney-u-test)
