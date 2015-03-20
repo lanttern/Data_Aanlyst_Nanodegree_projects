@@ -1,4 +1,4 @@
-# Make Effective Data Visualization: Global Trends for Startup Markets
+# Make Effective Data Visualization: Global Trends for Startup Markets: 1990 to 2014
 #### by Zhihui Xie
 ## Summary
 This data visualization shows global trends of 6 startup market (Software, Biotechnology, Mobile, E-Commerce, Social Media and Real Estate) share from 1990 to 2014.  The data was collected from CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/).
