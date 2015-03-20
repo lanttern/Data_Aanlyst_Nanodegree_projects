@@ -52,6 +52,7 @@ In	this	visualization,	I	illustrated the	ENTRIESn_hourly	for	rainy	days	and	nonr
 ###### b. How	ridership	varies	by	subway	station
 ###### c. Which	stations	have	more	exits	or	entries	at	different	times	of	day
 For	this	visualization,	I	investigated and	illustrated the	ENTRIESn_hourly	per	UNIT station	(Figure	2).	As	you	can	see	below,	most	of	the	stations	had the	ridership	under 200,000.	Thirteen	stations	had ridership	over	400,000,	and	one	station	had relative	higher	ridership	(over	800,000). 
+
 ![alt tag](images/fig2.jpg)
 ##### Figure	2.	Ridership	by	unit	stations	on	May	2011 (NYC	subway).	The	index	number	of	unit	stations	was	shown	in	x-axis.	The	ENTRIESn_hourly	(ridership)	was	shown	in	y-axis.	The	figure	was	plotted	using	ggplot	and	python.	The	value	of		ENTRIESn_hourly	was	shown	as	red	points.
 
