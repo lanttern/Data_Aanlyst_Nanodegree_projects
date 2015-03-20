@@ -205,8 +205,8 @@ Top 5 contributors to the map:  5
 ## References:
 [Data Wrangling with MongoDB (Udacity)](https://www.udacity.com/course/ud032)
 
-[Tutorial — PyMongo 2.8 documentation - MongoDB API](api.mongodb.org/python/current/tutorial.html)
+[Tutorial — PyMongo 2.8 documentation - MongoDB API](https://api.mongodb.org/python/current/tutorial.html)
 
-[OpenStreetMap](www.openstreetmap.org/)
+[OpenStreetMap](http://www.openstreetmap.org/)
 
 
