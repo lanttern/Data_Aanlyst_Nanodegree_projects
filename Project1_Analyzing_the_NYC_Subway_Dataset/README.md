@@ -12,7 +12,7 @@ The	 data	 I	 analyzed	 include	 two	 populations:	 ridership	 on	 rainy	 days	 
 assumptions:
 a. Both	samples	are	drawn	from	normal	population	
 b. The	two	samples	are	independent.
-Therefore,	 I	 examined	 if	 the	 data	 I	 used	 for	 analysis	 were	 normally	distributed.	First,	the	histograms	for	the	number	of	entries	per	hour	for	days	on	rainy	days	and	non-rainy	days	showed	they	were	not	normal	distribution.	Second,	the	Shapiro-Wilks	test,	which	is	a	test	to	check	if	a sample	came	from	a normally	distributed population,	was	against	the	null	hypothesis	that	 the	 populations	 were	 normally	 distributed	 (p	 <	 0.05).	 Taken	together,	 the	data	did not	meet	 the	assumptions	 for	Welch's	 t-Test.	Thus,		 I chose Mann-Whitney	 U-Test,	 which	 can	 be	 used	 for	 data	 with	 both	 normal	and	non-normal	distribution.
+Therefore,	 I	 examined	 if	 the	 data	 I	 used	 for	 analysis	 were	 normally	distributed.	First,	the	histograms	for	the	number	of	entries	per	hour	for	days	on	rainy	days	and	non-rainy	days	showed	they	were	not	normal	distribution.	Second,	the	Shapiro-Wilks	test,	which	is	a	test	to	check	if	a sample	came	from	a normally	distributed population,	was	against	the	null	hypothesis	that	 the	 populations	 were	 normally	 distributed	 (p	 <	 0.05).	 Taken	together,	 the	data	did not	meet the	assumptions	 for	Welch's	 t-Test.	Thus,	I chose Mann-Whitney	 U-Test,	 which	 can	 be	 used	 for	 data	 with	 both	 normal	and	non-normal	distribution.
 
 ###### 3. What	results	did	you	get	from	this	statistical	test?
 To	 do	 the	 test	 for	 an	 alpha	 level	 of	 0.05,	 I	 used	 the	 null	 hypothesis:	 the	ridership	 on	 rainy	 days	 and	 non-rainy	 days	 are	 the	 same.	 The	 alternative	hypothesis	 is:	 the	 ridership	 on	 rainy	 days	 and	 non-rainy	 days	 are	 not	 the	same.	 The	 mean	 of	 ENTRIESn_hourly on	 rainy	 days	 was 1105.45 and	 the	mean	 of	 ENTRIESn_hourly	 on	 non-rainy	 days	 was 1090.28.	 The MannWhitneyU-Test	results	showed	that	the p_value	for	the	test	was	0.025.	
@@ -51,9 +51,8 @@ In	this	visualization,	I	illustrated the	ENTRIESn_hourly	for	rainy	days	and	nonr
 ###### a. Ridership	by	time-of-day	or	day-of-week
 ###### b. How	ridership	varies	by	subway	station
 ###### c. Which	stations	have	more	exits	or	entries	at	different	times	of	day
-For	this	visualization,	I	investigated and	illustrated the	ENTRIESn_hourly	per	UNIT station	(Figure	2).	As	you	can	see	below,	most	of	the	stations	had the	ridership	under 200,000.	Thirteen	stations	had ridership	over	400,000,	and	one	station	had
-relative	higher	ridership	(over	800,000). 
-![alt tag](images/fig2.jpg)
+For	this	visualization,	I	investigated and	illustrated the	ENTRIESn_hourly	per	UNIT station	(Figure	2).	As	you	can	see	below,	most	of	the	stations	had the	ridership	under 200,000.	Thirteen	stations	had ridership	over	400,000,	and	one	station	had relative	higher	ridership	(over	800,000). 
+![alt tag](images/fig2.tiff)
 ##### Figure	2.	Ridership	by	unit	stations	on	May	2011 (NYC	subway).	The	index	number	of	unit	stations	was	shown	in	x-axis.	The	ENTRIESn_hourly	(ridership)	was	shown	in	y-axis.	The	figure	was	plotted	using	ggplot	and	python.	The	value	of		ENTRIESn_hourly	was	shown	as	red	points.
 
 ##Section	4.	Conclusion
