@@ -1,4 +1,5 @@
 #Analyzing	the	NYC	Subway	Dataset: Predict Ridership in Rainy and Non-rainy Days
+by Zhihui Xie
 
 ##Overview
 In	this	analysis,	I	am	taking	data	from	May	2011	NYC	MTA	Subway	as	provided	in	the	Udacity	'Introduction	to	Data	Science'	class	and	testing	the	hypothesis	that	whether	rainy	days	impacts	ridership.
