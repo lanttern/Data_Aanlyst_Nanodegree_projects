@@ -3,7 +3,7 @@
 ## Summary
 This data visualization shows global trends of 6 startup market (Software, Biotechnology, Mobile, E-Commerce, Social Media and Real Estate) share from 1990 to 2014.  The data was collected from CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/).
 ## Design
-### Data Cleaning and Exploratoration
+### Data Cleaning and Exploratory
 The hypothesis of the design is the quantity or the market share of startups may be different across different markets over time. To test the hypothesis, I first removed invalid data points in “market” and “founded_year” column using Rstudio. Then, I did the first exploration with all markets across all years in the data set:
 ![alt tag](images/r1.png) 
 This visualization contains too much information. The line chart was cluttered and it’s hard to get the effective comparisons. Therefore, the data were truncated and focused on hot markets from 1990 to 2014. I did the second exploration as shown below:
