@@ -46,7 +46,7 @@ function draw(data) {
           // Change order of legends
           Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
           Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
-          var legend = myChart.addLegend(width*0.9, 10, 100, 100, "right");
+          var legend = myChart.addLegend(width*0.9, 10, 100, 100, "right", [Series1, Series2]);
           legend.fontSize = "17px"; // set font size for legend
           myChart.draw();
 
@@ -57,22 +57,13 @@ function draw(data) {
 
           d3.selectAll("circle")
              .style("opacity", 0)
-             .on("click", function() {
-               d3.select(this)
-                 .style({"stroke-width": "5px"})
-                 .style("opacity", 1);
-               }).on("dblclick", function() {
-               d3.select(this)
-                 .style({"stroke-width": "1px"})
-                 .style("opacity", 0);
-               })
 
         /* 
           Apply mouse click event: single click to show area, double click to hide area
         */
 
           d3.selectAll("path")
-             .style("opacity", 0.2)
+             .style("opacity", 0.3)
              .style({"stroke-width": "4px"})
              .on("click", function() {
                d3.select(this)
@@ -81,7 +72,7 @@ function draw(data) {
                }).on("dblclick", function() {
                d3.select(this)
                  .style({"stroke-width": "4px"})
-                 .style("opacity", 0.2);
+                 .style("opacity", 0.3);
                })
         };
 
