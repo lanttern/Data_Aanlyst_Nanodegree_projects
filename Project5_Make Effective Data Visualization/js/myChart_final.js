@@ -34,9 +34,9 @@ function draw(data) {
           x.timeInterval = 1;
           x.title = "Founded year of startups";
           x.fontSize = "17px"; //set font size for x label
-          y.dateParseFormat = ".1%";
-          y.tickFormat = ".1%";
-          y.overrideMax = 0.25;
+          y.dateParseFormat = "%";
+          y.tickFormat = "%";
+          y.overrideMax = 0.3;
           y.title = "Percentage of Startups in Industries";
           y.fontSize = "17px"; //set font size for y label
           var Series1 = myChart.addSeries("Startup industry", dimple.plot.line); // try line chart
