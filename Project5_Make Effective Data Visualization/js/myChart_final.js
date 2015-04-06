@@ -54,7 +54,8 @@ function draw(data) {
           */
           d3.selectAll("line")
              .style("opacity", 0);
-
+          /* Set opacity for circles
+          */
           d3.selectAll("circle")
              .style("opacity", 0)
 
