@@ -34,7 +34,7 @@ Using the cleaned data, I decided to creat a new chart with D3.js and dimple.js.
 #### Interview #3
 ###### The highlight on biotechnology gave me a clear idea how this industry of startups occupied porportion changed across time. I think it will be better if you can select and highlight two or more industries for comparisons in the final plot.
 
-###### In addition, though it's a challenge question, it's interesting and important to explore other markets that have increasing trends.
+###### In addition, though it's a challenge question, it's interesting and important to explore other industries that have increasing trends.
 
 ## Final Design
 In responding to comments from the interviews, I improved the chart with the following modifications:
