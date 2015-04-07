@@ -73,15 +73,15 @@ The final code includes "index_final.html", "css/style_final.css", "js/myChart_f
 ## Final Design - 2
 In responding to comments from the reviewer, I improved the chart with the following modifications:
 
-1)&7) I modified myChart.js code to add data source information and a note to show it's clickable.
+1)&7) I modified myChart.js code to add data source information and a note to indicate it's clickable.
 
-2) The chart fits well in my screen. I narrowed the wide a little bit in case is too big in other screen.
+2) The chart fits well in my screen. I narrowed the width a little bit in case is too big in other screen.
 
 3) I added a section "Reasons for applying line chart and scatter chart" to state why I chose line chart and scatter chart.
 
-4)&5) It's a good suggestion to separate industries in "Other" category. I took the suggestion and show them in new final design.
+4)&5) It's a good suggestion to separate industries in "Other" category. I showed all industries in "Other" category in the new final design.
 
-6)&8) Both are great suggestions. While, here I want to tell a story about trends of certain industries druing a time period from 1990 to 2013, and see how they change each year. I think the line chart is good for this purpose, but it's worthy and interesting to try the slope graph and split the data into certain time periods. I will play around with that.  
+6)&8) Both are great suggestions. While, here I want to tell a story about trends of certain industries druing a time period from 1990 to 2013, and see how they changed each year. I think the line chart is good for this purpose, but it's worthy and interesting to try the slope graph and split the data into certain time periods. I will play around with that.  
 
 7) I changed the y-axis title to "Percentage of Startups by Industry" as suggested.
 
@@ -89,7 +89,7 @@ The final chart of the data visualization is shown below:
 
 ![alt tag](images/d3_final1.png) 
 
-In this final chart, one decreased trends (biotechnology) and one increased trends (Social Media) from 2005 to 2013 were highlighted in the final plot: biotechnology and other. 
+In this final chart, one decreased trends (biotechnology) and one increased trends (Social Media) from 2005 to 2013 were highlighted in the final plot. 
 
 The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
 
