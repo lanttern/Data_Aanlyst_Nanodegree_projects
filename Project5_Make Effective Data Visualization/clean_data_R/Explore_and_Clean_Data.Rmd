@@ -123,7 +123,7 @@ p2 <- ggplot(aes(x = founded_year, y = percentage), data = df.final) +
   scale_x_continuous(breaks = seq(1990, 2013, 1)) +
   coord_cartesian(xlim = c(1990, 2014)) + 
   labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
-  ggtitle("Global Trends for startup industries")
+  ggtitle("Trends for startup industries")
 p2
 ```
 
@@ -139,16 +139,17 @@ c_market <- c(as.character(sub_markets$Var1))
 # list hot industrie for startups with increased trends
 other_markets <- c(" Real Estate ", " Travel ", " Fashion ", " Consulting ", " Education ", " Social Media ")
 other_markets
-startups.othermarket <- subset(startups.by.year.market, market %in% other_markets)
-df.other <- startups.othermarket %>%
-  group_by(founded_year) %>%
-  summarise(
-            market = " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) ",
-            fre = sum(fre)
-            )
-hot_startups.by.year.market <- merge(hot_startups.by.year.market, df.other, by = c("founded_year", "market", "fre"), all = TRUE)
 
-df2 <- merge(hot_startups.by.year.market, df1, by = "founded_year", all = TRUE)
+startups.othermarket <- subset(startups.by.year.market, market %in% other_markets)
+#df.other <- startups.othermarket %>%
+#  group_by(founded_year) %>%
+#  summarise(
+#            market = " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) ",
+#            fre = sum(fre)
+#            )
+#hot_startups.by.year.market <- merge(hot_startups.by.year.market, df.other, by = c("founded_year", "market", "fre"), all = TRUE)
+
+df2 <- merge(startups.othermarket, df1, by = "founded_year", all = TRUE)
 #head(df2)
 # calculate percentage of startups in each industry each year
 df3 <- df2 %>%
@@ -157,7 +158,8 @@ df3 <- df2 %>%
     percentage = fre/tol)
 #head(df3)
 # merge to obtain final subset of data
-df.final <- merge(df2, df3, by = c("founded_year", "market"), all = TRUE)
+df.other <- merge(df2, df3, by = c("founded_year", "market"), all = TRUE)
+df.final <- merge(df.final, df.other, all = TRUE)
 #head(df.final)
 ```
 
@@ -169,7 +171,7 @@ p3 <- ggplot(aes(x = founded_year, y = percentage), data = df.final) +
   scale_x_continuous(breaks = seq(1990, 2013, 1)) +
   coord_cartesian(xlim = c(1990, 2014)) + 
   labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
-  ggtitle("Global Trends for startup industries")
+  ggtitle("Trends for startup industries")
 p3
 ```
 

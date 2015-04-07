@@ -6,20 +6,27 @@ function draw(data) {
 
           "use strict";
           var margin = 75,
-              width = 1400 - margin,
-              height = 600 - margin;
+              width = 1300 - margin,
+              height = 500 - margin;
 
           d3.select("#mychart")
             .append("h2")
                .attr("id", "title")
-               .text("Trends for Startup Industries: 1990 to 2013");
+               .text("Trends for Startup Industries: 1990 to 2013")
+            .append("h3")
+               .attr("id", "data source")
+               .text("Data Source: CrunchBase")
+            .append ("h4")
+               .attr("id", "hint")
+               .text("Note: Click a line to highlight, double click to hide");
+
 
           var svg = d3.select("#mychart")
             .append("svg")
               .attr("width", width + margin)
               .attr("height", height + margin)
             .append("g")
-              .attr("class","chart")
+              .attr("class","chart");
               
       /*
         Dimple.js Chart construction code
@@ -36,17 +43,17 @@ function draw(data) {
           x.fontSize = "17px"; //set font size for x label
           y.dateParseFormat = "%";
           y.tickFormat = "%";
-          y.overrideMax = 0.3;
-          y.title = "Percentage of Startups in Industries";
+          //y.overrideMax = 0.25;
+          y.title = "Percentage of Startups by Industry";
           y.fontSize = "17px"; //set font size for y label
           var Series1 = myChart.addSeries("Startup industry", dimple.plot.line); // try line chart
           var Series2 = myChart.addSeries("Startup industry", dimple.plot.scatter); //try scatter chart
           //myChart.addSeries("Startup industries", dimple.plot.area);
           //myChart.addSeries("Startup industries", dimple.plot.bar);
           // Change order of legends
-          Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
-          Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
-          var legend = myChart.addLegend(width*0.9, 10, 100, 100, "right", [Series1, Series2]);
+          // Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
+          // Series1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
+          var legend = myChart.addLegend(width*0.7, 10, 250, 250, "right", [Series1, Series2]);
           legend.fontSize = "17px"; // set font size for legend
           myChart.draw();
 
@@ -60,7 +67,7 @@ function draw(data) {
              .style("opacity", 0)
 
         /* 
-          Apply mouse click event: single click to show area, double click to hide area
+          Apply mouse click event: single click to show line, double click to hide line
         */
 
           d3.selectAll("path")
