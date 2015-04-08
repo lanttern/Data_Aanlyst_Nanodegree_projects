@@ -175,9 +175,46 @@ p3 <- ggplot(aes(x = founded_year, y = percentage), data = df.final) +
 p3
 ```
 
-## 2.11 Export Data
+## 2.11 Group data by time period
+
+```{r time period data}
+df.f1 <-subset(df.final, founded_year < 2000)
+df.f1 <- df.f1 %>%
+  group_by(market) %>%
+  summarise (
+    founded_year = "1990-1999",
+    fre = sum(fre),
+    tol = sum(tol),
+    percentage = fre/tol
+    )
+df.f2 <- subset(df.final, founded_year > 1999)
+df.f2 <- df.f2 %>%
+  group_by(market) %>%
+  summarise (
+    founded_year = "2000-2013",
+    fre = sum(fre),
+    tol = sum(tol),
+    percentage = fre/tol
+    )
+df <- merge(df.f2, df.f1, by = c("founded_year", "market", "fre", "tol", "percentage"), all = TRUE)
+```
+
+## 2.12 Fifth Exploration
+
+```{r fifth plot: compare two time period}
+p4 <- ggplot(aes(x = founded_year, y = percentage), data = df) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market)) +
+  labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
+  ggtitle("Trends for startup industries")
+p4
+```
+
+## 2.13 Export Data
 
 ```{r data exportation}
-colnames(df.final) <- c("Founded year of startups", "Startup industry", "Number of startups in this industry", "Total number of founded startups", "Percentage of this startup industry (number of startups in this industry normalized with total number of founded startups)")
-write.csv(df.final, file="data.csv", row.names=FALSE)
+df.final1 <- df.final
+colnames(df.final1) <- c("Founded year of startups", "Startup industry", "Number of startups in this industry", "Total number of founded startups", "Percentage of startups by industry")
+colnames(df) <- c("Founded year of startups", "Startup industry", "Number of startups in this industry", "Total number of founded startups", "Percentage of startups by industry")
+write.csv(df.final1, file="data.csv", row.names=FALSE)
+write.csv(df, file="data1.csv", row.names=FALSE)
 ```
