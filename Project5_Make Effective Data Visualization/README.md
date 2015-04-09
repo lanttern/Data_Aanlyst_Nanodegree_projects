@@ -1,7 +1,7 @@
 # Make Effective Data Visualization: Trends for Startup Industries: 1990 to 2013
 #### by Zhihui Xie
 ## Summary
-This data visualization is going to explore trends of hot startup industry from 1990 to 2013. The dataset was downloaded from CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/).
+This data visualization is going to explore trends of hot startup industries from 1990 to 2013. The dataset was downloaded from CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/).
 ## Design
 ### Data Cleaning and Exploratory
 The hypothesis of the design is the quantity or the percentage of startups may be different across different industries over time. To test the hypothesis, I first removed invalid data points in “market” and “founded_year” column using Rstudio. Then, I did the first exploration with all industries across all years in the data set:
@@ -44,14 +44,14 @@ In responding to comments from the interviews, I improved the chart with the fol
 
 1) Set style for all path with increase of "stroke-width";
 
-2) To explore industries with increasing trends are challenge because there are many new emerged small industries with increasing trends, adding these industries will make the visualization too complex. To partially address this issue, I focused on industries with number of startups greater than 300. Then, I examined the changes of percentage of these industries overtime and found the following industries with increased trends: Real Estate, Travel, Fashion, Consulting, Education, Social Media. To simplify the graph, these industries are classified as "Other".
+2) To explore industries with increasing trends are challenge because there are many new emerged small industries with increasing trends, adding these industries will make the visualization too complex. To partially address this issue, I focused on industries with number of startups greater than 300. Then, I examined the changes of percentage of these industries overtime and found the following industries with increased trends in recent years: Real Estate, Travel, Fashion, Consulting, Education, Social Media. To simplify the graph, these industries are classified as "Other".
 
 3) Two typical trends were highlighted in the final plot: biotechnology and other. 
 The final chart of the data visualization is shown below:
 ![alt tag](images/d3_final.png) 
 The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
 
-## Feedback from Udacity Reviewer
+## Feedback from Udacity Reviewer #1
 ###### 1) The animations you put in work well. I like the tooltip that shows up when hovering. However, it'll help if there's some note on the chart that the lines are clickable. I wouldn't have known they were clickable if I hadn't gone through the javascript code.
 
 ###### 2) Also the visualization is quite wide. It doesn't fit on my laptop screen unless I zoom out.
@@ -85,13 +85,40 @@ In responding to comments from the reviewer, I improved the chart with the follo
 
 7) I changed the y-axis title to "Percentage of Startups by Industry" as suggested.
 
-The final chart of the data visualization is shown below:
+The revised chart of the data visualization is shown below:
 
 ![alt tag](images/d3_final1.png) 
 
 In this final chart, one decreased trends (biotechnology) and one increased trends (Social Media) from 2005 to 2013 were highlighted in the final plot. 
 
+## Feedback from Udacity Reviewer #2
+###### 1) You are definitely on the right track, but I'd still consider the graphic exploratory rather than explanatory. To make an explanatory chart, you as the chart designer really need to take charge of leading the reader through what you want the reader to see. As already suggested in the last review, one option would be to make multiple charts. If you decide to make multiple charts, you can even keep the larger chart you currently have and then make more focused charts to tell your story.
+
+###### 2) You could also add a paragraph pointing out to the reader what exactly makes this chart so interesting.
+
+###### 3) There are a couple of small issues with your .js file. One is that some lines of code are very long (over 80 characters). You will want to make sure each line of code is under 80 characters.
+
+###### 4) You also left in some code that you commented out. It's generally good practice to delete unused code from your final project.
+
+## Final Design - 3
+In responding to comments from the reviewer, I edited my charts:
+
+1) Great suddestions about making explanatory chart. I noticed that the startups were dominated by certain industries such as software and biotechnology in 90s. However, the percentage of startups in these industries declined in 00s and startups in new industries emerged such as social media, E-commerce. Thus, I decided to compare percentage of startups by industry in two time period: 1990 - 1999 and 2000 - 2013, in addition to show time series of percentage of startups by industry. 
+
+2) It's a good point to add a paragraph to explain the charts. I added a conclusion section for that.
+
+3) I improved the code to avoid long lines.
+
+4) I removed the unused code from final version.
+
+The revised chart of the data visualization is shown below:
+
+![alt tag](images/d3_final2.png) 
+
 The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
+
+## Conclusion
+In this project, I analyzed the trends for ten startup industries from 1990 to 2013 with data from CrunchBase. It's interesting to find that the percentages of startups by industry changed overtime in the visualization of time-series chart. In general, two dominant industries - software and biotechnology, tend to shrink from 90s to 00s, and startups in new industries including social media, e-commerce and mobile increased. These trends are more obvious by comparing percentages of startups by industry between two time periods: 1990 - 1999 and 2000 - 2013. Compared with 90s, the percentage of startups in software, biotechnology and consulting decreased. While, the percentage of startups in new emeraged industries including social media, mobile and e-commerce increased. These trends fit well with development of industries and economy. In 90s, the available of internet to most of people and increase of investment in biomedical research boosted startups founded in software and biotechnology. Then, internet bubble crash and regression of economy in 00s caused decrease of percentage of startups in these two industries. Simultaneously, startups in new industries started to emerged. For example, Facebook (social media industry) founded in 2004, and smart phones (mobile industry) became popular in 2007. Although the percentage of startups in software and biotechnology declined, the number of startups still increased in 00s as compared to 90s. At the same time, there is a faster increase of total number of startups in other industries and new emerged industries, which results in decrease of percentage of startups in software and biotechnology.
 
 ## Discussion
 The dataset was downloaded from CruchBase. There might be some limitations for this dataset. For example, the data are incomplete as many startups are not collected or reported in the system, or the classifications of industries are not completely correct. Even though, the trends shown here are still meaningful considering the data in the system are not totally biased.
