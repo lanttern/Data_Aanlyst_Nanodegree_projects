@@ -1,0 +1,222 @@
+#Global trends for startup industries
+
+### by Zhihui Xie
+
+========================================================
+
+## Global setting and library for this analysis
+
+```{r global_options}
+# global setting for this analysis
+library(knitr)
+opts_chunk$set(fig.width=12, fig.height=8,
+               warning=FALSE, message=FALSE)
+```
+
+```{r packages}
+# Load all of the packages that you end up using
+# in your analysis in this code chunk.
+suppressMessages(library(ggplot2))
+suppressMessages(library(dplyr))
+```
+
+# 1. Overview
+This data set includes information about startups worldwide collected by CruchBase (https://info.crunchbase.com/about/crunchbase-data-exports/). The exploration here will focus on the global trends of startup industry occupied percentage over time from 1990 to 2013.
+
+# 2. Clean data and Exploration
+
+## 2.1 Load the Data
+
+```{r Load_the_Data}
+setwd("~/Downloads")
+startups <- read.csv("crunchbase_monthly_export_companies_2014.csv")
+```
+
+## 2.2 Summary of the Data Set
+
+```{r Summary}
+dim(startups)
+summary(startups)
+```
+
+## 2.3 Clean Data
+
+```{r number of new founded industries}
+# clean data: remove invalid data point in "market" and "founded_year" column
+startups <- subset(startups, market != ""&!is.na(founded_year))
+# calculate number of new founded startups in each maket in each year
+startups.by.year.market <- startups %>%
+  group_by(founded_year, market) %>%
+  summarise(
+            fre = n()
+            )
+```
+
+## 2.4 First Exploration 
+
+```{r first plot: include all founded years and industries}
+p0 <- ggplot(aes(x = founded_year, y = fre), data = startups.by.year.market) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market))
+p0
+```
+
+There is too much information there and it's hard to get the effective comparisons. Therefore, the data were truncated and focused on hot industries from 1990 to 2013.
+
+## 2.5 Get a Subset of Data
+
+```{r}
+# limit data from 1990 to 2013
+startups.by.year.market <- subset(startups.by.year.market, (1989 < founded_year) & (founded_year < 2014))
+# find hot industries with total number of startups greater than 1400
+markets <- as.data.frame(table(startups$market))
+sub_markets <- subset(markets, Freq > 1400 & !Var1 == "") 
+c_market <- c(as.character(sub_markets$Var1))
+# list hot industrie for startups
+c_market
+hot_markets <- c(" Biotechnology ", " E-Commerce ", " Mobile ", " Software ")
+# make table of hot industries and founded year
+hot_startups.by.year.market <- subset(startups.by.year.market, market %in% hot_markets)
+```
+
+## 2.6 Second Exploration
+
+```{r second plot: hot industries from 1990 to 2013}
+p1 <- ggplot(aes(x = founded_year, y = fre), data = hot_startups.by.year.market) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market)) +
+  scale_x_continuous(breaks = seq(1990, 2013, 1)) +
+  coord_cartesian(xlim = c(1990, 2014)) + 
+  labs(x = "Year", y = "Number of Startups", color = "Industries") + 
+  ggtitle("Global Trends for startup industries")
+p1
+```
+
+## 2.7 Data Normalization
+
+```{r reshape data}
+# calculate total new founded startups each year
+df0 <- startups %>%
+  group_by(founded_year) %>%
+  summarise(
+            tol = n()
+            )
+# calculate new founded startups from 1990 to 2013 in each industry
+df1 <- subset(df0, (1989 < founded_year) & (founded_year < 2014))
+
+# merge hot startups and df1
+df2 <- merge(hot_startups.by.year.market, df1, by = "founded_year", all = TRUE)
+#head(df2)
+# calculate percentage of startups in each industry each year
+df3 <- df2 %>%
+  group_by(founded_year, market) %>%
+  summarise(
+    percentage = fre/tol)
+#head(df3)
+# merge to obtain final subset of data
+df.final <- merge(df2, df3, by = c("founded_year", "market"), all = TRUE)
+#head(df.final)
+```
+
+## 2.8 Third Explorarion
+```{r third plot: industry occupied percentage}
+p2 <- ggplot(aes(x = founded_year, y = percentage), data = df.final) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market)) +
+  scale_x_continuous(breaks = seq(1990, 2013, 1)) +
+  coord_cartesian(xlim = c(1990, 2014)) + 
+  labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
+  ggtitle("Trends for startup industries")
+p2
+```
+
+It seems that all the selected hot induries for startups tend to decline. It's interesting to explore which industry for startups has a increased trend. To do that, number of startups greater than 300 in each industry were selected and visulized to find industry with increased trends. 
+
+## 2.9 Explore industries with increased trends
+
+```{r}
+# add increased industries
+sub_markets <- subset(markets, Freq > 300 & !Var1 == "") 
+c_market <- c(as.character(sub_markets$Var1))
+# plot each industry to find the one with increased trends.
+# list hot industrie for startups with increased trends
+other_markets <- c(" Real Estate ", " Travel ", " Fashion ", " Consulting ", " Education ", " Social Media ")
+other_markets
+
+startups.othermarket <- subset(startups.by.year.market, market %in% other_markets)
+df.other <- startups.othermarket %>%
+  group_by(founded_year) %>%
+  summarise(
+            market = " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) ",
+            fre = sum(fre)
+            )
+hot_startups.by.year.market <- merge(hot_startups.by.year.market, df.other, by = c("founded_year", "market", "fre"), all = TRUE)
+
+df2 <- merge(hot_startups.by.year.market, df1, by = "founded_year", all = TRUE)
+#head(df2)
+# calculate percentage of startups in each industry each year
+df3 <- df2 %>%
+  group_by(founded_year, market) %>%
+  summarise(
+    fre = fre,
+    tol = tol,
+    percentage = fre/tol)
+#head(df3)
+# merge to obtain final subset of data
+#df.other <- merge(df2, df3, by = c("founded_year", "market"), all = TRUE)
+df.final <- merge(df.final, df.other, all = TRUE)
+#head(df.final)
+```
+
+
+## 2.10 Fourth Explorarion
+```{r fourth plot: final industry occupied percentage}
+p3 <- ggplot(aes(x = founded_year, y = percentage), data = df.final) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market)) +
+  scale_x_continuous(breaks = seq(1990, 2013, 1)) +
+  coord_cartesian(xlim = c(1990, 2014)) + 
+  labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
+  ggtitle("Trends for startup industries")
+p3
+```
+
+## 2.11 Group data by time period
+
+```{r time period data}
+df.f1 <-subset(df.final, founded_year < 2000)
+df.f1 <- df.f1 %>%
+  group_by(market) %>%
+  summarise (
+    founded_year = "1990-1999",
+    fre = sum(fre),
+    tol = sum(tol),
+    percentage = fre/tol
+    )
+df.f2 <- subset(df.final, founded_year > 1999)
+df.f2 <- df.f2 %>%
+  group_by(market) %>%
+  summarise (
+    founded_year = "2000-2013",
+    fre = sum(fre),
+    tol = sum(tol),
+    percentage = fre/tol
+    )
+df <- merge(df.f2, df.f1, by = c("founded_year", "market", "fre", "tol", "percentage"), all = TRUE)
+```
+
+## 2.12 Fifth Exploration
+
+```{r fifth plot: compare two time period}
+p4 <- ggplot(aes(x = founded_year, y = percentage), data = df) +
+  geom_line(aes(color = market)) + geom_point(aes(color = market)) +
+  labs(x = "Year", y = "Percentage of Startups", color = "Industries") + 
+  ggtitle("Trends for startup industries")
+p4
+```
+
+## 2.13 Export Data
+
+```{r data exportation}
+df.final1 <- df.final
+colnames(df3) <- c("Founded year of startups", "Startup industry", "Number of startups in this industry", "Total number of founded startups", "Percentage of startups by industry")
+#colnames(df) <- c("Founded year of startups", "Startup industry", "Number of startups in this industry", "Total number of founded #startups", "Percentage of startups by industry")
+write.csv(df3, file="data_other.csv", row.names=FALSE)
+#write.csv(df, file="data1.csv", row.names=FALSE)
+```

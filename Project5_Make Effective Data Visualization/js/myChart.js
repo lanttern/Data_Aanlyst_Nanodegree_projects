@@ -12,7 +12,7 @@ function draw(data) {
           d3.select("#mychart")
             .append("h2")
                .attr("id", "title")
-               .text("Global Trends for Startup Markets");
+               .text("Trends for Startup Industries: 1990 to 2013");
 
           var svg = d3.select("#mychart")
             .append("svg")
@@ -26,38 +26,50 @@ function draw(data) {
       */
 
           var myChart = new dimple.chart(svg, data);
-          var x = myChart.addTimeAxis("x", "founded_year"); 
-          var y = myChart.addMeasureAxis("y", "percentage");
-          //var z = myChart.addMeasureAxis("z", "freq") // try bubble chart
+          var x = myChart.addTimeAxis("x", "Founded year of startups"); 
+          var y = myChart.addMeasureAxis("y", "Percentage of startups by industry");
+          var z = myChart.addMeasureAxis("z", "Number of startups in this industry")
           x.dateParseFormat = "%Y";
           x.tickFormat = "%Y";
           x.timeInterval = 1;
           x.title = "Year";
+          x.fontSize = "17px"; //set font size for x label
           y.dateParseFormat = ".1%";
-          y.tickFormat = ".1%";
-          y.title = "Percentage of Startup Market Share";
-          //myChart.addSeries("market", dimple.plot.line); // try line chart
-          //myChart.addSeries("market", dimple.plot.scatter); //try scatter chart
-          myChart.addSeries("market", dimple.plot.area);
-          myChart.addSeries("market", dimple.plot.bar);
-          var legend = myChart.addLegend(width*0.7, 60, width*0.2, 60, 'right');
+          y.tickFormat = ".1%";  
+          y.overrideMax = 0.3;
+          y.title = "Percentage of Startups in Industries";
+          y.fontSize = "17px"; //set font size for y label
+          myChart.addSeries("Startup industry", dimple.plot.line); // line chart
+          myChart.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
+          var legend = myChart.addLegend(width*0.6, 30, width*0.25, 30, "right");
+          legend.fontSize = "17px"; // set font size for legend
           myChart.draw();
 
+          /* set opacity for grids and circles
+          */
+
+          d3.selectAll("line")
+             .style("opacity", 0);
+          d3.selectAll("circle")
+             .style("opacity", 0);
+
         /* 
-          Add mouseover event
+          Apply mouse click event: single click to show line, double click to hide line
         */
 
           d3.selectAll("path")
-             .style("opacity", 0.1)
-             .on("mouseover", function() {
+             .style("opacity", 0.3)
+             .style({"stroke-width": "1px"})
+             .on("click", function() {
                d3.select(this)
-                 .style({"stroke-width": "3px"})
-                 .style("opacity", 1);
-               }).on("mouseout", function() {
-                  d3.select(this)
-                  .style('opacity', 0.1);
+                 .style({"stroke-width": "8px"})
+                 .style("opacity", 2);
+               }).on("dblclick", function() {
+               d3.select(this)
+                 .style({"stroke-width": "1px"})
+                 .style("opacity", 0.3);
                });
-  
+
         };
 
   /*
@@ -65,4 +77,4 @@ function draw(data) {
     and pass the contents of it to the draw function
   */
 
-  d3.csv("data/data.csv", draw);
+d3.csv("clean_data_R/data0.csv", draw);

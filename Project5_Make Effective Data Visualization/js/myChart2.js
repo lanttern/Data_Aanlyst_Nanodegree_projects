@@ -6,13 +6,20 @@ function draw(data) {
 
           "use strict";
           var margin = 75,
-              width = 1400 - margin,
+              width = 1300 - margin,
               height = 600 - margin;
 
           d3.select("#mychart")
             .append("h2")
                .attr("id", "title")
-               .text("Global Trends for Startup Markets");
+               .text("Trends for Startup Industries: 1990 to 2013")
+
+            .append("h3")
+               .attr("id", "data source")
+               .text("Data Source: CrunchBase")
+            .append("h4")
+               .attr("id", "note")
+               .text("Note: Click a line to highlight, double click to hide");
 
           var svg = d3.select("#mychart")
             .append("svg")
@@ -26,46 +33,51 @@ function draw(data) {
       */
 
           var myChart = new dimple.chart(svg, data);
-          var x = myChart.addTimeAxis("x", "founded_year"); 
-          var y = myChart.addMeasureAxis("y", "percentage");
-          //var z = myChart.addMeasureAxis("z", "freq") // try bubble chart
+          var x = myChart.addTimeAxis("x", "Founded year of startups"); 
+          var y = myChart.addMeasureAxis("y", "Percentage of startups by industry");
+          var z = myChart.addMeasureAxis("z", "Number of startups in this industry")
           x.dateParseFormat = "%Y";
           x.tickFormat = "%Y";
           x.timeInterval = 1;
-          x.title = "Year";
-          x.fontSize = "17px";
-          y.dateParseFormat = ".1%";
-          y.tickFormat = ".1%";
-          y.title = "Percentage of Startup Market Share";
-          y.fontSize = "17px";
-          //myChart.addSeries("market", dimple.plot.line); // try line chart
-          //myChart.addSeries("market", dimple.plot.scatter); //try scatter chart
-          myChart.addSeries("market", dimple.plot.area);
-          myChart.addSeries("market", dimple.plot.bar);
-          var legend = myChart.addLegend(width*0.5, 40, width*0.4, 40, 'right');
-          legend.fontSize = "17px";
+          x.title = "Founded year of startups";
+          x.fontSize = "17px"; //set font size for x label
+          y.dateParseFormat = "%";
+          y.tickFormat = "%";  
+          //y.overrideMax = 0.3;
+          y.title = "Percentage of Startups by Industry";
+          y.fontSize = "17px"; //set font size for y label
+          var S1 = myChart.addSeries("Startup industry", dimple.plot.line); // line chart
+          var S2 = myChart.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
+          //S1.addOrderRule([" Software ", " Biotechnology ", " Mobile ", " E-Commerce ", " Other (Real Estate, Travel, Fashion, Consulting, Education, Social Media) "])
+          var legend = myChart.addLegend(width*0.8, 10, 150, 200, "right", [S1, S2]);
+          legend.fontSize = "17px"; // set font size for legend
           myChart.draw();
 
-          /* Remove grids
+          /* set opacity for grids and circles
           */
+
           d3.selectAll("line")
+             .style("opacity", 0);
+          d3.selectAll("circle")
              .style("opacity", 0);
 
         /* 
-          Add mouseover event
+          Apply mouse click event: single click to show line, double click to hide line
         */
 
           d3.selectAll("path")
-             .style("opacity", 0.1)
-             .on("mouseover", function() {
+             .style("opacity", 0.3)
+             .style({"stroke-width": "4px"})
+             .on("click", function() {
                d3.select(this)
-                 .style({"stroke-width": "3px"})
-                 .style("opacity", 1);
-               }).on("mouseout", function() {
-                  d3.select(this)
-                  .style('opacity', 0.1);
+                 .style({"stroke-width": "8px"})
+                 .style("opacity", 2);
+               }).on("dblclick", function() {
+               d3.select(this)
+                 .style({"stroke-width": "1px"})
+                 .style("opacity", 0.3);
                });
-  
+
         };
 
   /*
@@ -73,4 +85,4 @@ function draw(data) {
     and pass the contents of it to the draw function
   */
 
-  d3.csv("data/data.csv", draw);
+d3.csv("clean_data_R/data.csv", draw);

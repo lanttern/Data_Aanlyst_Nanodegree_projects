@@ -7,11 +7,10 @@
 
 #h3 {
         text-align: center;
-        font-size: 14.5px;
+        font-size: 13.5px;
         font-style: bold;
       }
-#h4 {
-        text-align: left;
-        font-size: 14.5px;
-        font-style: bold;
-      }
+
+#mychart2 {
+	padding-left: 50px;
+}

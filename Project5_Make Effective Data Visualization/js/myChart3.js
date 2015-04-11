@@ -11,7 +11,7 @@ function draw_1st(data) {
 
           "use strict";
           var margin = 75,
-              width = 1300 - margin,
+              width = 650 - margin,
               height = 620 - margin;
 
           var svg = d3.select("#mychart1")
@@ -33,15 +33,13 @@ function draw_1st(data) {
           x.tickFormat = "%Y";
           x.timeInterval = 1;
           x.title = "Founded year of startups";
-          x.fontSize = "17px"; //set font size for x label
+          x.fontSize = "13.5px"; //set font size for x label
           y.dateParseFormat = "%";
           y.tickFormat = "%";  
           y.title = "Percentage of Startups by Industry";
-          y.fontSize = "17px"; //set font size for y label
-          var Series1 = myChart1.addSeries("Startup industry", dimple.plot.line); // line chart
-          var Series2 = myChart1.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
-          var legend = myChart1.addLegend(width*0.7, 10, 200, 200, "right", [Series1, Series2]);
-          legend.fontSize = "17px"; // set font size for legend
+          y.fontSize = "13.5px"; //set font size for y label
+          myChart1.addSeries("Startup industry", dimple.plot.line); // line chart
+          myChart1.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
           myChart1.draw();
 
           /* set opacity for grids and circles
@@ -83,7 +81,7 @@ function draw_2nd(data) {
 
           "use strict";
           var margin = 75,
-              width = 1300 - margin,
+              width = 650 - margin,
               height = 620 - margin;
 
           var svg = d3.select("#mychart2")
@@ -103,15 +101,15 @@ function draw_2nd(data) {
           var z = myChart2.addMeasureAxis("z", "Number of startups in this industry")
           x.dateParseFormat = "%Y";
           x.title = "Founded time period of startups";
-          x.fontSize = "17px"; //set font size for x label
+          x.fontSize = "13.5px"; //set font size for x label
           y.dateParseFormat = "%";
           y.tickFormat = "%";
-          y.overrideMax = 0.2;
+          y.overrideMax = 0.24;
           y.title = "Percentage of Startups by Industry";
-          y.fontSize = "17px"; //set font size for y label
-          myChart2.addSeries("Startup industry", dimple.plot.line); // line chart
-          myChart2.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
-          var legend = myChart2.addLegend(width*0.7, 10, 200, 200, "right");
+          y.fontSize = "13.5px"; //set font size for y label
+          var Series1 = myChart2.addSeries("Startup industry", dimple.plot.line); // line chart
+          var Series2 = myChart2.addSeries("Startup industry", dimple.plot.scatter); // scatter chart
+          var legend = myChart2.addLegend(width*0.6, 10, 250, 250, "right", [Series1, Series2]);
           legend.fontSize = "17px"; // set font size for legend
           myChart2.draw();
 

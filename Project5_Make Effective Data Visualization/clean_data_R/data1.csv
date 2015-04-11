@@ -1,21 +1,1 @@
-"Founded year of startups","Startup industry","Number of startups in this industry","Total number of founded startups","Percentage of startups by industry"
-"1990-1999"," Biotechnology ",316,2499,0.126450580232093
-"1990-1999"," Consulting ",59,2499,0.023609443777511
-"1990-1999"," E-Commerce ",71,2499,0.0284113645458183
-"1990-1999"," Education ",28,2393,0.0117007939824488
-"1990-1999"," Fashion ",11,1964,0.00560081466395112
-"1990-1999"," Mobile ",83,2499,0.0332132853141257
-"1990-1999"," Real Estate ",8,2050,0.00390243902439024
-"1990-1999"," Social Media ",9,1237,0.00727566693613581
-"1990-1999"," Software ",467,2499,0.18687474989996
-"1990-1999"," Travel ",11,2230,0.00493273542600897
-"2000-2013"," Biotechnology ",2039,31861,0.0639967358212234
-"2000-2013"," Consulting ",282,31861,0.00885094629798186
-"2000-2013"," E-Commerce ",1336,31861,0.0419321427450488
-"2000-2013"," Education ",582,31861,0.0182668466149838
-"2000-2013"," Fashion ",278,31146,0.00892570474539267
-"2000-2013"," Mobile ",1467,31861,0.0460437525501397
-"2000-2013"," Real Estate ",276,31861,0.00866262829164182
-"2000-2013"," Social Media ",692,31861,0.0217193433978846
-"2000-2013"," Software ",3135,31861,0.0983961583126707
-"2000-2013"," Travel ",275,31146,0.00882938419058627
+Founded year of startups,Startup industry,Number of startups in this industry,Total number of founded startups,Percentage of startups by industry"Period I (From 1990 to 1999, Mean)", Biotechnology ,316,2499,0.12645058"Period I (From 1990 to 1999, Mean)", Consulting ,59,2499,0.023609444"Period I (From 1990 to 1999, Mean)", E-Commerce ,71,2499,0.028411365"Period I (From 1990 to 1999, Mean)", Education ,28,2393,0.011700794"Period I (From 1990 to 1999, Mean)", Fashion ,11,1964,0.005600815"Period I (From 1990 to 1999, Mean)", Mobile ,83,2499,0.033213285"Period I (From 1990 to 1999, Mean)", Real Estate ,8,2050,0.003902439"Period I (From 1990 to 1999, Mean)", Social Media ,9,1237,0.007275667"Period I (From 1990 to 1999, Mean)", Software ,467,2499,0.18687475"Period I (From 1990 to 1999, Mean)", Travel ,11,2230,0.004932735"Period II (From 2000 to 2013, Mean)", Biotechnology ,2039,31861,0.063996736"Period II (From 2000 to 2013, Mean)", Consulting ,282,31861,0.008850946"Period II (From 2000 to 2013, Mean)", E-Commerce ,1336,31861,0.041932143"Period II (From 2000 to 2013, Mean)", Education ,582,31861,0.018266847"Period II (From 2000 to 2013, Mean)", Fashion ,278,31146,0.008925705"Period II (From 2000 to 2013, Mean)", Mobile ,1467,31861,0.046043753"Period II (From 2000 to 2013, Mean)", Real Estate ,276,31861,0.008662628"Period II (From 2000 to 2013, Mean)", Social Media ,692,31861,0.021719343"Period II (From 2000 to 2013, Mean)", Software ,3135,31861,0.098396158"Period II (From 2000 to 2013, Mean)", Travel ,275,31146,0.008829384
