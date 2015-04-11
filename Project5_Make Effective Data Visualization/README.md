@@ -140,7 +140,7 @@ In responding to comments from the reviewer, I edited my charts:
 
 The revised chart of the data visualization is shown below:
 
-![alt tag](images/d3_final3-1.png) 
+   ![alt tag](images/d3_final3-1.png) 
 ![alt tag](images/d3_final3-2.png) 
 
 The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
