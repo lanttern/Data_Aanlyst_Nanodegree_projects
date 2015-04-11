@@ -182,7 +182,7 @@ df.f1 <-subset(df.final, founded_year < 2000)
 df.f1 <- df.f1 %>%
   group_by(market) %>%
   summarise (
-    founded_year = "1990-1999",
+    founded_year = "Period I (From 1990 to 1999, Mean)",
     fre = sum(fre),
     tol = sum(tol),
     percentage = fre/tol
@@ -191,7 +191,7 @@ df.f2 <- subset(df.final, founded_year > 1999)
 df.f2 <- df.f2 %>%
   group_by(market) %>%
   summarise (
-    founded_year = "2000-2013",
+    founded_year = "Period II (From 2000 to 2013, Mean)",
     fre = sum(fre),
     tol = sum(tol),
     percentage = fre/tol
