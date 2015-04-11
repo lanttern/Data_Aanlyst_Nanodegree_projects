@@ -117,8 +117,35 @@ The revised chart of the data visualization is shown below:
 
 The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
 
+## Feedback from Udacity Reviewer #3
+
+###### 1) You graphic is getting better with each submission. There are still a couple of things to think about. -I like the conclusion you've added in the README.md file. It will really help your index.html file stand on its own and be explanatory if you put this same information directly above or beneath your charts. The explanation doesn't have to be as long as it was in your conclusion, but including it will help you guide the reader through your story. -Your "z" value that maps to the circle radius isn't explained in your chart. When I hover over the chart and a big circle appears, I'm not sure what that represents. You should think about adding a legend that shows what the circle radius represents. -On the second chart, the x-axis is labeled 1990-1999 and then 2000-2013. I'm not sure what that refers to. Is the first point 1990 and the last point 2013? Or is 1990-1999 representing an average percentage during that time period? Please add a little more context on the x-axis so that I can understand what you are referring to there. And in the text you include for the people reading your chart, be sure to explain why you divided the data into those two periods. It's part of the story that you are telling. -I don't think you need the "click to highlight" on your second chart. It's very hard to click and unclick the Fashion, Travel and Real Estate lines. -Consider putting the two charts one above the other instead of side by side. That way on the second chart you can limit the y-axis to just 20% and even make the y-axis bigger so that I can see the Fashion, Travel and Real Estate lines better. Right now they're all on top of each other. -And when you include an explanation of a paragraph or two above or below your chart, make sure you explain why you want the reader to look at both plots. Think about what information does one plot provide that the other does not? And think about why you thought it was important for your reader to see both. Make sure you work that into the explanation that you give to the reader in your html file.
+
+###### 2) Your files "index0.html", "index1.html", and "index2.html" aren't working. It's important that I can see these charts as part of your documentation showing how you've iterated and changed your project. I think the html files don't function properly because you are no longer including the csv files associated with those charts. Please put the csv files back in the right places so that those other html files work.
+
+## Final Design - 4
+In responding to comments from the reviewer, I edited my charts:
+
+1) I included a brief conclusion under my charts. 
+
+2) I add a note under title to indicate that the size of circles represent quantity of startups by industry.
+
+3) add more information into the label of x-axis (each value is mean of percentages of startups by industry in each period) and edit the conclusion to make it clear.
+
+4) I put one chart above another to make them easy to see and click lines.
+
+5) I keep the mouse click event for the second chart because some line are very close and hard to see if not be highlighted.
+
+6) I edited "index0.html" to "index3.html" to make them work for your reference.
+
+The revised chart of the data visualization is shown below:
+
+![alt tag](images/d3_final3.png) 
+
+The final code includes "index_final.html", "css/style_final.css", "js/myChart_final.js". 
+
 ## Conclusion
-In this project, I analyzed the trends for ten startup industries from 1990 to 2013 with data from CrunchBase. It's interesting to find that the percentages of startups by industry changed overtime in the visualization of time-series chart. In general, two dominant industries - software and biotechnology, tend to shrink from 90s to 00s, and startups in new industries including social media, e-commerce and mobile increased. These trends are more obvious by comparing percentages of startups by industry between two time periods: 1990 - 1999 and 2000 - 2013. Compared with 90s, the percentage of startups in software, biotechnology and consulting decreased. While, the percentage of startups in new emeraged industries including social media, mobile and e-commerce increased. These trends fit well with development of industries and economy. In 90s, the available of internet to most of people and increase of investment in biomedical research boosted startups founded in software and biotechnology. Then, internet bubble crash and regression of economy in 00s caused decrease of percentage of startups in these two industries. Simultaneously, startups in new industries started to emerge. For example, Facebook (social media industry) founded in 2004, and smart phones (mobile industry) became popular in 2007. Although the percentage of startups in software and biotechnology declined, the number of startups still increased in 00s as compared to 90s. At the same time, there is a faster increase of total number of startups in other industries and new emerged industries, which results in decrease of percentage of startups in software and biotechnology.
+In this project, I analyzed the trends for ten startup industries from 1990 to 2013 with data from CrunchBase. It's interesting to find that the percentages of startups by industry changed overtime in the visualization of time-series chart. In general, two dominant industries - software and biotechnology, tend to shrink from 90s to 00s, and startups in new industries including social media, e-commerce and mobile increased. These trends are more obvious by comparing mean of percentages of startups by industry between two time periods: 1990 - 1999 and 2000 - 2013. Compared with 90s, the percentage of startups in software, biotechnology and consulting decreased. While, the percentage of startups in new emeraged industries including social media, mobile and e-commerce increased. These trends fit well with development of industries and economy. In 90s, the available of internet to most of people and increase of investment in biomedical research boosted startups founded in software and biotechnology. Then, internet bubble crash and regression of economy in 00s caused decrease of percentage of startups in these two industries. Simultaneously, startups in new industries started to emerge. For example, Facebook (social media industry) founded in 2004, and smart phones (mobile industry) became popular in 2007. Although the percentage of startups in software and biotechnology declined, the number of startups still increased in 00s as compared to 90s. At the same time, there is a faster increase of total number of startups in other industries and new emerged industries, which results in decrease of percentage of startups in software and biotechnology.
 
 ## Discussion
 The dataset was downloaded from CruchBase. There might be some limitations for this dataset. For example, the data are incomplete as many startups are not collected or reported in the system, or the classifications of industries are not completely correct. Even though, the trends shown here are still meaningful considering the data in the system are not totally biased.
