@@ -134,7 +134,7 @@ In responding to comments from the reviewer, I edited my charts:
 
 4) I put one chart above another to make them easy to see and click lines.
 
-5) I keep the mouse click event for the second chart because some line are very close and hard to see if not be highlighted.
+5) I keep the mouse click event for the second chart because some lines are very close and hard to see if not be highlighted.
 
 6) I edited "index0.html" to "index3.html" to make them work for your reference.
 
